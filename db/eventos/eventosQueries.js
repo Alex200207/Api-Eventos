@@ -75,10 +75,10 @@ const actualizarEventoQuery = (id, producto) => {
 /**
  * Eliminar un producto por su ID
  */
-const eliminarEventoQuery = (id) => {
+const eliminarEventoQuery = (id_evento) => {
     return new Promise((resolve, reject) => {
-        const sql = 'DELETE FROM evento WHERE id = ?';
-        config.query(sql, [id], (err, resultado) => {
+        const sql = 'DELETE FROM evento WHERE id_evento = ?';
+        config.query(sql, [id_evento], (err, resultado) => {
             if (err) {
                 reject(err);
             } else {
