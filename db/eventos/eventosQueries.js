@@ -1,7 +1,7 @@
 import config from '../../config.js';
 
 /**
- * Carga la lista de evento (en este ejemplo solo 10 evento)
+ * Carga la lista de evento 
  */
 const listarTodosEventosQuery = () => {
     // Una promesa es una forma de que siempre se devuelva un resultado al quien llama (sea error o éxito)

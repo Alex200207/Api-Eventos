@@ -1,4 +1,4 @@
-import {
+import {//importamos las funciones listarTodosEventosQuery, listarEventoPorIdQuery, crearEventoQuery, actualizarEventoQuery y eliminarEventoQuery
   listarTodosEventosQuery,
   listarEventoPorIdQuery,
   crearEventoQuery,
@@ -9,16 +9,16 @@ import {
 /**
  * Obtener todos los eventos de la base de datos
  */
-const listarTodosEventos = async (req, res) => {
-  // Un bloque try-catch  sirve para validar si la peticion se obtiene o se devuelve un error
-  // Try -> intentar
-  // Catch -> capturar el error
-  try {
+const listarTodosEventos = async (req, res) => {//creamos una funcion llamada listarTodosEventos y esta es una funcion asincrona
+  //resive dos parametros req y res que son la peticion y la respuesta
+
+  try {//try es un bloque de codigo que intenta ejecutar un bloque de codigo y si hay un error entonces se ejecuta el bloque de codigo de catch
     //  Ejecutar la consulta en la base de datos
-    const eventos = await listarTodosEventosQuery();
-    res.json(eventos);
-  } catch (error) {
-    res.status(500).send(error);
+    const eventos = await listarTodosEventosQuery();//creamos una constante eventos que es igual a la funcion listarTodosEventosQuery
+    //await es una palabra clave que se utiliza para esperar a que una promesa se resuelva y devuelva un valor
+    res.json(eventos);//enviamos la respuesta en formato json
+  } catch (error) {//catch es un bloque de codigo que se ejecuta si hay un error en el bloque de codigo de try
+    res.status(500).send(error);//enviamos un mensaje de error con el codigo de estado 500
   }
 };
 
